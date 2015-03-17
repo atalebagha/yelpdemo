@@ -77,12 +77,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.paperclip_defaults = {
+config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['atalebagha-yelpdemo'],
-    :access_key_id => ENV['AKIAIB7VX6YZXMWMWPHQ'],
-    :secret_access_key => ENV['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']
-  }
-}
+    :bucket => 'atalebagha-yelpdemo',
+    :access_key_id => 'AKIAIB7VX6YZXMWMWPHQ',
+    :secret_access_key => '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'
+  }}
+  # Required for devise gem.  Remember to change localhost:3000 to actual application host
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

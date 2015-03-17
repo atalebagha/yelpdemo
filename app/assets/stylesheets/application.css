@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+/*arabic {
+	font-family: 'Droid Arabic Kufi', serif;
+	direction: rtl;
+	size: 18px;
+}*?

@@ -40,13 +40,12 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-    config.paperclip_defaults = {
+   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['atalebagha-yelpdemo'],
-    :access_key_id => ENV['AKIAIB7VX6YZXMWMWPHQ'],
-    :secret_access_key => ENV['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']
-  }
-
+    :bucket => 'atalebagha-yelpdemo',
+    :access_key_id => 'AKIAIB7VX6YZXMWMWPHQ',
+    :secret_access_key => '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'
+  }}
   
 end
