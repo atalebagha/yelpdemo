@@ -25,7 +25,7 @@
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= restaurant.website %></td>
+        <td><%= link_to restaurant.website, restaurant.website %></td>
         <td><%= restaurant.city %></td>
         <td><%= restaurant.country %></td>
         <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
