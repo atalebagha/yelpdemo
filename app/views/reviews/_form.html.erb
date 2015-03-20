@@ -11,15 +11,17 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :rating %>
-    <%= f.number_field :rating, class: "form-control" %>
-  </div>
+  <div id="star-rating"></div><br />
   <div class="form-group">
     <%= f.label :comment %>
     <%= f.text_area :comment, class: "form-control" %>
   </div>
-  <div class="form-group", class: "btn btn-primary">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+  $('#star-rating').raty({path: 'https://s3-ap-southeast-1.amazonaws.com/atalebagha-yelpdemo/stars/', scoreName: 'review[rating]'});
+</script>
