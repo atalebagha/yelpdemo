@@ -32,3 +32,22 @@
 .container-fluid {
 	padding: 10px 120px;
 }
+
+.rating-f .br-widget {
+    height: 25px;
+}
+
+.rating-f .br-widget a {
+    background: url('https://s3-ap-southeast-1.amazonaws.com/atalebagha-yelpdemo/stars/star%402x.png');
+    background-size: 25px 50px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    float: left;
+}
+
+.rating-f .br-widget a:hover,
+.rating-f .br-widget a.br-active,
+.rating-f .br-widget a.br-selected {
+    background-position: 0 25px;
+}
