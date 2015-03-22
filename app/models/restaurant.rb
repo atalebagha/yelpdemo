@@ -10,4 +10,8 @@ attr_accessor :image
   end
 
   has_many :reviews
+
+  validates :name, :address, :phone, :website, :city, :country, :image, presence: true
+  validates :phone, format: { with: /\A\(\d{3}\) \d{3}-\d{4}\z/, message: "must be in (XXX) XXX-XXXX format" }
+
 end
