@@ -13,5 +13,6 @@ attr_accessor :image
 
   validates :name, :address, :phone, :website, :city, :country, :image, presence: true
   validates :phone, format: { with: /\A\(\d{3}\) \d{3}-\d{4}\z/, message: "must be in (XXX) XXX-XXXX format" }
-
+  validates :website, format: { with: /\Ahttps?:\/\/.*\z/, message: "must be a valid website" }
+  validates :address, format: { with:  /\A\d+[^,]+\z/, message: "Must be a valid address"}
 end
