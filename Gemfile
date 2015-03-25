@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 
+gem 'foundation-rails'
+
 # gem 'fog-aws'
 # 
 

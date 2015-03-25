@@ -1,4 +1,5 @@
-
+<link rel="stylesheet" href="stylesheets/responsive-tables.css">
+<script src="stylesheet" href="javascripts/responsive-tables.js"></script>
 
 <div class="jumbotron">
   <h1>Welcome to my Yelp Demo!</h1>
@@ -6,17 +7,18 @@
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 
-<table class="table table-hover table-condensed">
+
+<table class="responsive">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <th>City</th>
-      <th>Country</th>
+      <th class="text-right">الاسم</th>
+      <th class="text-right">عنوان</th>
+      <th class="text-right">هاتف</th>
+      <th class="text-right">موقع</th>
+      <th class="text-right">المدينة</th>
+      <th class="text-right">الدولة</th>
       <% if user_signed_in? && current_user.admin?  %>
-         <th colspan="2"></th>
+         <th class="text-right" colspan="2"></th>
       <% end %>
      
     </tr>
@@ -25,15 +27,15 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= link_to restaurant.name, restaurant %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to restaurant.website, restaurant.website %></td>
-        <td><%= restaurant.city %></td>
-        <td><%= restaurant.country %></td>
+        <td class="text-right"><%= link_to restaurant.name, restaurant %></td>
+        <td class="text-right"><%= restaurant.address %></td>
+        <td class="text-right"><%= restaurant.phone %></td>
+        <td class="text-right"><%= link_to restaurant.website, restaurant.website %></td>
+        <td class="text-right"><%= restaurant.city %></td>
+        <td class="text-right"><%= restaurant.country %></td>
         <% if user_signed_in? && current_user.admin? %>
-          <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
-          <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+          <td class="text-right"><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
+          <td class="text-right"><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
         <% end %>
         
       </tr>

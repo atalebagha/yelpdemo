@@ -1,0 +1,38 @@
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <%= link_to "Yelp demo", root_path, class: "navbar-brand" %>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <section class="top-bar-section">
+      <ul class="left">
+        <li><%= link_to 'About', pages_about_path %></li>
+        <li><%= link_to 'Contact', pages_contact_path %></li>
+      </ul>
+      
+
+
+
+
+      
+        <%= form_tag search_restaurants_path, method: :get, class: "left " do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+      <% end %>
+      <ul class="right">
+
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+      </ul>
+    </section>
+
+</nav>
