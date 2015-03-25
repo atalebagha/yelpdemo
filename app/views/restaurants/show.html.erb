@@ -8,8 +8,7 @@
 </p>
 
 <h2>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
+  <strong><%= @restaurant.name %></strong>
 </h2>
 
  <div class="star-rating" data-score= <%=@avg_rating%> ></div><br />
@@ -66,6 +65,13 @@
           <td>
             <div class="star-rating" data-score= <%=review.rating%> ></div><br />
             <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+            <% if user_signed_in? %>
+              <% if (review.user == current_user) || (current_user.admin?) %>
+                <%= link_to "Edit Review", edit_restaurant_review_path(@restaurant, review), class: "btn btn-link" %>
+                <%= link_to "Delete Review", restaurant_review_path(@restaurant, review), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link"  %>
+              <% end %>
+            <% end %>
+
           </td>
         </tr>
       </tbody>

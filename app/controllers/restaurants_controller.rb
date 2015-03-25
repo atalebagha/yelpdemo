@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -77,4 +78,11 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit(:name, :address, :phone, :website, :city, :country, :image)
     end
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Only admins can do that"
+      end
+    end
+
 end
