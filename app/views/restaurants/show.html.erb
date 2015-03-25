@@ -40,7 +40,16 @@
 
 
 
-<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %><br />
+<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %><br /><br>
+
+<iframe
+  width="300"
+  height="300"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBX5xgAwbjytRdIvyPnF9xB5jZz9n7ATik
+    &q=<%= @restaurant.address.parameterize %>,-<%= @restaurant.city.parameterize %>,-<%= @restaurant.country.parameterize %>">
+</iframe>
+
 <% if user_signed_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
 <% end %>
