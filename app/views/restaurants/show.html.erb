@@ -41,8 +41,9 @@
 
 
 <%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %><br />
-
+<% if user_signed_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
+<% end %>
 <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
 </div>
 
